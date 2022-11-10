@@ -29,7 +29,7 @@ If a player collides with their opponent's trail...
 Design:
     Casting:
     classes:
-        Actor:
+        Actor (Parent):(Kelton)
           A visible, moveable thing that participates in the game.
 
           methods:
@@ -45,6 +45,9 @@ Design:
             -set_text(self, text):
             -set_velocity(self, velocity):
 
+            -Player 1(child class)
+            -Player 2(child class)
+
         Cast:
           A collection of actors.
 
@@ -55,7 +58,7 @@ Design:
             -get_first_actor(self, group):
             -remove_actor(self, group, actor):
 
-        Snake:
+        Snake(Parent):(Josiah)
           A long limbless reptile.
 
           methods:
@@ -65,6 +68,11 @@ Design:
             -grow_tail(self, number_of_segments):
             -turn_head(self, velocity):
             -_prepare_body(self):
+
+                -Player 1(child class)
+                -Player 2(child class)
+
+          
     
     Directing:
     Classes:
@@ -164,6 +172,16 @@ Design:
             -get_y(self):
             -reverse(self):
             -scale(self, factor):
+
+        Game_over:(Teigen)
+         
+         methods:
+         -display game over message
+         -turn the cycles white
+         -make them move around not colliding
+
+
+
 
 
       ***__main__.py***
