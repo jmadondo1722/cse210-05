@@ -33,13 +33,13 @@ class Actor:
         """
         return self._color
 
-    def set_font_size(self, font_size):
+    def get_font_size(self):
         """Gets the actor's font size.
         
         Returns:
             Point: The actor's font size.
         """
-        self._font_size = font_size
+        return self._font_size
 
     def get_position(self):
         """Gets the actor's position in 2d space.
@@ -65,17 +65,17 @@ class Actor:
         """
         return self._velocity
     
-    # def move_next(self):
-    #     """Moves the actor to its next position according to its velocity. Will wrap the position 
-    #     from one side of the screen to the other when it reaches the given maximum x and y values.
+    def move_next(self):
+        """Moves the actor to its next position according to its velocity. Will wrap the position 
+        from one side of the screen to the other when it reaches the given maximum x and y values.
         
-    #     Args:
-    #         max_x (int): The maximum x value.
-    #         max_y (int): The maximum y value.
-    #     """
-        # x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
-        # y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
-        # self._position = Point(x, y)
+        Args:
+            max_x (int): The maximum x value.
+            max_y (int): The maximum y value.
+        """
+        x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
+        y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
+        self._position = Point(x,y)
 
     def set_color(self, color):
         """Updates the color to the given one.
