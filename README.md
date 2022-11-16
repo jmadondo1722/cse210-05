@@ -1,6 +1,6 @@
 # cse210-05
 The README.md for designing this week's Team Assignment. Enter your name below when you are able to access: 
-Kelton Webb: * email: *
+Kelton Webb: * email: keltonwebb99@gmail.com *
 
 Josiah Madondo: * email: jmadondo1722@gmail.com*
 
