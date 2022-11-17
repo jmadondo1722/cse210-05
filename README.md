@@ -120,7 +120,6 @@ Design:
 
         Script:
           A collection of actions.
-
           methods:
             -add_action(self, group, action):
             -get_actions(self, group):

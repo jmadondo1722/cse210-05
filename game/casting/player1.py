@@ -1,18 +1,21 @@
 import constants
+
 from game.casting.actor import Actor
 from game.shared.point import Point
 
 
-class Snake(Actor):
-    """
-    A long limbless reptile.
-    
-    The responsibility of Snake is to move itself.
-
+class Player1(Actor):
+    """Responsible of Player 1's appearance, postition, 
+    2d velocity and space.
     Attributes:
-        _points (int): The number of points the food is worth.
+        _text (string): The text to display
+        _font_size (int): font size to use
+        _color (Color): Color of text
+        _position (Point): The screen coordinates
+        _velocity (Point): speed and direction
     """
     def __init__(self):
+        """Constructs Player1"""
         super().__init__()
         self._segments = []
         self._prepare_body()
@@ -67,3 +70,21 @@ class Snake(Actor):
             segment.set_text(text)
             segment.set_color(color)
             self._segments.append(segment)
+
+
+
+        # self.set_text("@")
+        # self.set_color(constants.GREEN)
+        # self.set_font_size(15)
+
+        # x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
+        # y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
+        # self._position = Point(x, y)
+
+        # velocity = Point(x, y)
+        # velocity = velocity.scale(constants.CELL_SIZE)
+        # self.set_velocity(velocity)
+
+        # position = Point(x, y)
+        # position = position.scale(constants.CELL_SIZE)
+        # self.set_position(position)
