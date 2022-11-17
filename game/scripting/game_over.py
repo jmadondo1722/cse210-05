@@ -3,6 +3,7 @@ from game.shared.point import Point
 from game.casting.actor import Actor
 from game.scripting.control_actors_action import ControlActorsAction
 from game.scripting.script import Script
+from game.services.keyboard_service import KeyboardService
 
 class Game_Over:
     """Game_Over triggers when a player collides with their opponent's trail...
@@ -13,7 +14,7 @@ class Game_Over:
 
     def __init__(self):
       self.actor = Actor()
-      self.controlactors = ControlActorsAction()
+      self.controlactors = ControlActorsAction(KeyboardService)
       print("game over init")
 
     def do_game_over(self, cast):
