@@ -39,7 +39,7 @@ class Player2(Actor):
 
     def grow_tail(self, number_of_segments):
         for i in range(number_of_segments):
-            tail = self._segments[-1]
+            tail = self._segments[0] #Will add only at the beginning of the array so only the head grows
             velocity = tail.get_velocity()
             offset = velocity.reverse()
             position = tail.get_position().add(offset)
