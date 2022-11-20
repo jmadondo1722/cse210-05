@@ -1,7 +1,5 @@
 import constants
 from game.casting.cast import Cast
-from game.casting.food import Food
-from game.casting.score import Score
 from game.casting.player1 import Player1
 from game.casting.player2 import Player2
 from game.scripting.script import Script
@@ -20,8 +18,8 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("cycles", Player1())
-    cast.add_actor("cycles", Player2())
+    cast.add_actor("player1", Player1())
+    cast.add_actor("player2", Player2())
    
     # start the game
     keyboard_service = KeyboardService()

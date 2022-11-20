@@ -35,7 +35,8 @@ class Game_Over:
         """
         print("do game over method")
 
-        cycles = self.cast.get_actors("cycles")
+        cycles = self.cast.get_actors("player1")
+        #need to do again for player2 because they are in 2 different actor groups
 
         x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y / 2)

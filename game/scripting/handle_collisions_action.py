@@ -28,7 +28,6 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        print("execute method")
         if self._is_game_over:
             self._handle_segment_collision(cast)
             self.game_over.do_game_over(cast, self._is_game_over)
