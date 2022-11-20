@@ -4,6 +4,9 @@ from game.scripting.action import Action
 from game.shared.point import Point
 from game.scripting.game_over import Game_Over
 from game.scripting.script import Script
+from game.casting.cast import Cast
+from game.casting.player1 import Player1
+from game.casting.player2 import Player2
 
 class HandleCollisionsAction(Action):
     """
@@ -20,6 +23,10 @@ class HandleCollisionsAction(Action):
         """Constructs a new HandleCollisionsAction."""
         self._is_game_over = False
         self.game_over = Game_Over()
+        #self.cast = Cast()
+        self.player1 = Player1()
+        self.player2 = Player2()
+    
 
     def execute(self, cast, script):
         """Executes the handle collisions action.
@@ -28,6 +35,13 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
+        #player1 = self.cast.get_first_actor("player1")
+        #player2 = self.cast.get_first_actor("player2")
+        
+        print("grow tail command")
+        self.player1.grow_tail(75)
+        self.player2.grow_tail(5)
+        
         if self._is_game_over:
             self._handle_segment_collision(cast)
             self.game_over.do_game_over(cast, self._is_game_over)

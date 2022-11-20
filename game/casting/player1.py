@@ -5,7 +5,7 @@ from game.shared.point import Point
 
 
 class Player1(Actor):
-    """Responsible of Player 1's appearance, postition, 
+    """Responsible of Player 1's appearance, position, 
     2d velocity and space.
     Attributes:
         _text (string): The text to display
@@ -39,7 +39,7 @@ class Player1(Actor):
 
     def grow_tail(self, number_of_segments):
         for i in range(number_of_segments):
-            tail = self._segments[0] #Will add only at the beginning of the array so only the head grows
+            tail = self._segments[-1]
             velocity = tail.get_velocity()
             offset = velocity.reverse()
             position = tail.get_position().add(offset)
