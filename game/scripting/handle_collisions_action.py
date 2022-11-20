@@ -29,9 +29,9 @@ class HandleCollisionsAction(Action):
             script (Script): The script of Actions in the game.
         """
         print("execute method")
-        if not self._is_game_over:
+        if self._is_game_over:
             self._handle_segment_collision(cast)
-            self.game_over.do_game_over(cast)
+            self.game_over.do_game_over(cast, self._is_game_over)
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
@@ -40,9 +40,10 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         print("handle segment collisions method")
-        snake = cast.get_first_actor("snakes")
-        head = snake.get_segments()[0]
-        segments = snake.get_segments()[1:]
+        
+        cycle = cast.get_first_actor("cycles")
+        head = cycle.get_segments()[0]
+        segments = cycle.get_segments()[1:]
         
         for segment in segments:
             #we need to fix this so it works for two players

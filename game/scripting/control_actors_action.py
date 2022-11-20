@@ -45,8 +45,8 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('s'):
             self._direction = Point(0, constants.CELL_SIZE)
         
-        player1 = cast.get_first_actor("player1")
+        player1 = cast.get_first_actor("cycles")
         player1.turn_head(self._direction)
 
-        player2 = cast.get_first_actor("player1")
+        player2 = cast.get_first_actor("cycles")
         player2.turn_head(self._direction)

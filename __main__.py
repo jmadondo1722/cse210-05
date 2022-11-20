@@ -20,10 +20,8 @@ def main():
     
     # create the cast
     cast = Cast()
-   #cast.add_actor("foods", Food())
-    cast.add_actor("player1", Player1())
-    cast.add_actor("player1", Player2())
-    #cast.add_actor("scores", Score())
+    cast.add_actor("cycles", Player1())
+    cast.add_actor("cycles", Player2())
    
     # start the game
     keyboard_service = KeyboardService()
